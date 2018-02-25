@@ -37,6 +37,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Photo');
     }
 
+    public function post(){
+        return $this->belongsTo('App\Post');
+    }
+
     /**
      * @return bool
      */
@@ -47,5 +51,6 @@ class User extends Authenticatable
         }
         return false;
     }
+
 
 }
