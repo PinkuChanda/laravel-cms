@@ -16,6 +16,7 @@
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
+    <link href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -25,7 +26,7 @@
     <![endif]-->
 
 
-
+    @yield('styles')
 
 </head>
 
@@ -155,7 +156,7 @@
                             </li>
 
                             <li>
-                                <a href="{{route('categories.create')}}">Create Category</a>
+                                <a href="{{route('categories.index')}}">Create Category</a>
                             </li>
 
                         </ul>
@@ -167,11 +168,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/media">All Media</a>
+                                <a href="{{route('medias.index')}}">All Media</a>
                             </li>
 
                             <li>
-                                <a href="">Upload Media</a>
+                                <a href="{{route('medias.create')}}">Upload Media</a>
                             </li>
 
                         </ul>
@@ -343,9 +344,9 @@
 <!-- jQuery -->
 <script src="{{asset('js/app.js')}}"></script>
 <script src="{{asset('js/libs.js')}}"></script>
+<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.2.0/min/dropzone.min.js')}}"></script>
 
-
-@yield('footer')
+@yield('scripts')
 
 
 </body>
