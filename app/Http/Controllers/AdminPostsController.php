@@ -121,4 +121,20 @@ class AdminPostsController extends Controller
         Session::flash('delete_post', 'Post Deleted Successfully');
         return redirect('/admin/posts');
     }
+
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function post( $id){
+        $post = Post::findOrFail($id);
+        $comments = $post->comments()->whereIsActive(1)->get();
+        return view('post', compact('post', 'comments'));
+    }
+
+
+
+
+
 }
